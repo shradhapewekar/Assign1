@@ -31,8 +31,8 @@ namespace Assign1
             SquareSums(A);
 
             //QUESTION 4:
-            int k = 2;
-            DiffPairs(new int[] { 3, 1, 4, 1, 5 }, k);
+            int k = 3;
+            DiffPairs(new int[] { 3, 1, 4, 1, 4 }, k);
 
             //QUESTION 5:
             UniqueEmails(new string[] {"dis.email+bull@usf.com", "dis.e.mail+bob.cathy@usf.com", "disemail+david@us.f.com"});
@@ -96,16 +96,18 @@ namespace Assign1
         }
         private static int DiffPairs(int[] nums, int k)
         {
+            // Get unique numbers from an array
+            int[] q = nums.Distinct().ToArray();
             // initialized variable i, j and count.
             int i , j,count = 0;
             // Run a loop starting from o and incrementing it by 1 till length of an input array.
-            for ( i = 0; i < nums.Length; i++)
+            for ( i = 0; i < q.Length; i++)
             {
                 // Check the difference of number at ith position with 
                 // all the numbers from (i+1) till the end of the array
-                for ( j = i + 1; j < nums.Length; j++)
+                for ( j = i + 1; j < q.Length; j++)
                 {
-                    if (nums[i] - nums[j] == k || nums[j] - nums[i] == k)
+                    if (q[i] - q[j] == k || q[j] - q[i] == k)
                         count++;
                 }
 
