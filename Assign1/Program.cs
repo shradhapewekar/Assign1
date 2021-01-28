@@ -13,7 +13,8 @@ namespace Assign1
              */
             //int n, i,j;
             int n = 5;//Convert.ToInt32(Console.ReadLine());
-         PrintTriangle(n);
+            Console.WriteLine("The printed pattern is:");
+            PrintTriangle(n);
 
             //QUESTION 2: 
             /*
