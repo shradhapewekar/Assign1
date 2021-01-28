@@ -32,12 +32,15 @@ namespace Assign1
 
             //QUESTION 4:
             int k = 3;
+            Console.WriteLine("\n4. Input array is { 3, 1, 4, 1, 4 }");
             DiffPairs(new int[] { 3, 1, 4, 1, 4 }, k);
 
             //QUESTION 5:
+            Console.WriteLine("\n5.Input Email IDs : dis.email+bull@usf.com, dis.e.mail+bob.cathy@usf.com, disemail+david@us.f.com");
             UniqueEmails(new string[] {"dis.email+bull@usf.com", "dis.e.mail+bob.cathy@usf.com", "disemail+david@us.f.com"});
 
             //Question 6:
+            Console.WriteLine("\n6.Input :{ B, C },{ D, B },{ C, A }");
             DestCity(new string [,] { { "B", "C" },{ "D", "B" },{ "C", "A" } } );
 
 
@@ -88,7 +91,7 @@ namespace Assign1
                     //Return true if condition succeed   else send False
                     if (i * i + j * j == A)
                     {
-                        Console.WriteLine( "\n3. True:" + i + "^2 + " + j + "^2 = " + A);
+                        Console.WriteLine( "\n\n3. True:" + i + "^2 + " + j + "^2 = " + A);
                         return true;
                     }
             Console.WriteLine("\n3. False");
@@ -112,7 +115,7 @@ namespace Assign1
                 }
 
             }
-            Console.WriteLine("\n4. Count of pairs with given diff " + k + " is "+ count);
+            Console.WriteLine("Count of unique pairs with given diff " + k + " is "+ count);
             return count;
 
         }
@@ -142,12 +145,11 @@ namespace Assign1
                 if (!(list.Contains(word + "@" + words[1])))
                 {
                     list[count] = word + "@" + words[1];
-                    Console.WriteLine(list[count]);
                     count++;
                 }
                
             }
-            Console.WriteLine("\n5." + count + " actually receive mails");
+            Console.WriteLine("\n" + count + " actually receive mails");
             return count;
         }
         private static string DestCity(string[,] paths)
@@ -178,7 +180,7 @@ namespace Assign1
                 // If not That is out destination city.
                 if (Array.Exists(ori, element => element == c) == false)
                 {
-                    Console.WriteLine("\n6.The destination city is " + c);
+                    Console.WriteLine("\nThe destination city is " + c);
                     return c;
 
                 }
