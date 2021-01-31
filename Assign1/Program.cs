@@ -27,13 +27,13 @@ namespace Assign1
             PrintPellSeries(n1);
 
             // QUESTION 3:
-            int A = 5;
+            int A = 4;
             SquareSums(A);
 
             //QUESTION 4:
-            int k = 3;
-            Console.WriteLine("\n4. Input array is { 3, 1, 4, 1, 4 }");
-            DiffPairs(new int[] { 3, 1, 4, 1, 4 }, k);
+            int k = 2;
+            Console.WriteLine("\n4. Input array is { 3, 1, 4, 1, 5 }");
+            DiffPairs(new int[] { 3, 1, 4, 1, 5 }, k);
 
             //QUESTION 5:
             Console.WriteLine("\n5.Input Email IDs : dis.email+bull@usf.com, dis.e.mail+bob.cathy@usf.com, disemail+david@us.f.com");
@@ -83,9 +83,9 @@ namespace Assign1
         private static bool SquareSums(int A)
         {
             // Run a loop starting from 1 and incrementing it by 1 till A.
-            for (long i = 1; i * i <= A; i++)
+            for (long i = 0; i * i <= A; i++)
                 // Run a loop starting from 1 and incrementing it by 1 till j*j is less than and equal to A.
-                for (long j = 1; j * j <= A; j++ )
+                for (long j = 0; j * j <= A; j++ )
 
                     // Check all combination of pair of squares of i and j
                     //Return true if condition succeed   else send False
@@ -99,8 +99,21 @@ namespace Assign1
         }
         private static int DiffPairs(int[] nums, int k)
         {
-            // Get unique numbers from an array
-            int[] q = nums.Distinct().ToArray();
+            int[] q = new int[nums.Length];
+            if (k != 0)
+            {
+                // Get unique numbers from an array
+                 int [] x = nums.Distinct().ToArray();
+                Array.Resize(ref q, x.Length);
+                q = x;
+
+            }
+            else
+            {
+                Array.Resize(ref q, nums.Length);
+                q = nums;
+            }
+
             // initialized variable i, j and count.
             int i , j,count = 0;
             // Run a loop starting from o and incrementing it by 1 till length of an input array.
